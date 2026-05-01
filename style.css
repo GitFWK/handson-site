@@ -82,6 +82,13 @@ body {
   color: #444;
 }
 
+.card a,
+.card a:visited {
+  color: #111827;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 
 /* ===== HIGHLIGHT ===== */
 .highlight {
