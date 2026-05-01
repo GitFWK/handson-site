@@ -1,23 +1,20 @@
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  padding: 60px 20px;
-  background: #f7f7f7; /* clean soft grey */
+  gap: 20px;          /* reduce spacing (was 40px) */
+  padding: 40px 20px;
+  max-width: 400px;   /* limit width so it doesn’t stretch */
+  margin: 0 auto;     /* center the whole block */
 }
 
-.social-links a {
-  display: inline-block;
+.social-links img {
+  width: 28px;        /* slightly smaller (optional) */
+  height: 28px;
   opacity: 0.5;
   transition: all 0.25s ease;
 }
 
-.social-links a img {
-  width: 36px;
-  height: 36px;
-}
-
-.social-links a:hover {
+.social-links img:hover {
   opacity: 1;
-  transform: translateY(-4px);
+  transform: translateY(-2px);
 }
