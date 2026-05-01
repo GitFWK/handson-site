@@ -161,46 +161,25 @@ body {
 
 /* ===== NAV CONTAINER ===== */
 .nav {
-  background: #111827;   /* dark bar like your old topbar */
+  background: #111827;
   color: white;
   padding: 16px 20px;
 }
 
-.nav a,
-.nav a:link,
-.nav a:visited {
-  color: white !important;
-  text-decoration: none;
-}
-
-.nav a.active,
-.nav a.active:link,
-.nav a.active:visited {
-  color: #f28c28 !important;
-}
-
-.nav a:hover {
-  color: #f28c28 !important;
-}
-
-/* ===== HAMBURGER NAV ===== */
-
-/* top row (logo + button) */
 .nav-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* brand */
 .brand {
   font-size: 20px;
   font-weight: bold;
+  color: white;
 }
 
-/* hamburger button */
 .menu-toggle {
-  font-size: 26px;
+  font-size: 28px;
   background: none;
   border: none;
   cursor: pointer;
@@ -208,28 +187,57 @@ body {
   color: white;
 }
 
-/* nav links (desktop) */
 .nav-links {
   display: flex;
   gap: 18px;
   margin-top: 10px;
 }
 
-.nav-links a {
+.nav-links a,
+.nav-links a:link,
+.nav-links a:visited {
   color: white;
   text-decoration: none;
   font-size: 15px;
+  font-weight: bold;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #f28c28;
 }
 
 /* ===== MOBILE ===== */
 @media (max-width: 600px) {
-  .nav .nav-links a,
-  .nav .nav-links a:link,
-  .nav .nav-links a:visited {
-    color: #111 !important;
+  .menu-toggle {
+    display: block;
+    color: white;
   }
 
-  .nav .nav-links a.active {
-    color: #f28c28 !important;
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: white;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 12px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a,
+  .nav-links a:link,
+  .nav-links a:visited {
+    color: #111;
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: #f4f5f7;
+    color: #f28c28;
   }
 }
