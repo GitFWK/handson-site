@@ -220,7 +220,7 @@ body {
 .dropdown-menu a {
   display: block;
   padding: 10px 14px;
-  color: white !important;
+  color: #111 !important;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -245,7 +245,7 @@ body {
     padding: 10px 8px;
     border-radius: 6px;
     background: transparent;
-    color: #111 !important;
+    color: white !important;
   }
 
   .dropdown-menu {
