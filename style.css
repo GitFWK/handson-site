@@ -239,7 +239,19 @@ body {
     padding: 10px;
     border-radius: 6px;
   }
-
+  
+  /* FIX: product card links turning purple */
+  .card h3 a,
+  .card h3 a:link,
+  .card h3 a:visited {
+    color: #111827 !important;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .card h3 a:hover {
+    color: #f28c28 !important;
+  }
   .nav-links a:hover,
   .nav-links a.active {
     background: #f4f5f7;
