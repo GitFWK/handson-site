@@ -1,18 +1,98 @@
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f5f7;
+  color: #222;
+}
+
+/* ===== HERO BUTTON ===== */
+.button {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 24px;
+  background: #22c55e;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.button:hover {
+  background: #16a34a;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* ===== SECTION TITLE ===== */
+.section-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 24px;
+}
+
+/* ===== GRID ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: white;
+  padding: 26px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+.card p {
+  line-height: 1.6;
+  font-size: 16px;
+  color: #444;
+}
+
+.card a {
+  color: #111827;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ===== HIGHLIGHT ===== */
+.highlight {
+  background: #fff;
+  border-left: 6px solid #111827;
+  padding: 28px;
+  border-radius: 12px;
+  margin-top: 30px;
+}
+
+/* ===== CONTACT SECTION ===== */
 .contact-section {
   text-align: center;
   padding: 70px 20px;
-  background: #111;
+  background: #111827;
   color: #fff;
 }
 
 .contact-section h2 {
-  font-size: 36px;
+  font-size: 34px;
   margin-bottom: 16px;
 }
 
 .contact-section p {
-  max-width: 620px;
-  margin: 0 auto 28px;
+  max-width: 600px;
+  margin: 0 auto 20px;
   color: #ccc;
   line-height: 1.6;
 }
@@ -22,6 +102,7 @@
   justify-content: center;
   gap: 14px;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .contact-btn {
@@ -37,13 +118,58 @@
   color: #fff;
 }
 
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+}
+
 .email-btn {
   background: #f28c28;
   color: #111;
 }
 
+.email-btn:hover {
+  background: #e67a12;
+}
+
 .contact-small {
-  margin-top: 30px !important;
+  margin-top: 30px;
   font-size: 14px;
-  color: #888 !important;
+  color: #888;
+}
+
+/* ===== SOCIAL LINKS ===== */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.social-links img {
+  width: 28px;
+  height: 28px;
+  opacity: 0.5;
+  transition: all 0.25s ease;
+}
+
+.social-links img:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #111827;
+  color: white;
+  text-align: center;
+  padding: 28px 20px;
+  margin-top: 40px;
+}
+
+.footer a {
+  color: #22c55e;
+  text-decoration: none;
+  font-weight: bold;
 }
