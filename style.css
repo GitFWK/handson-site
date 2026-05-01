@@ -131,91 +131,77 @@ body {
   padding: 28px;
 }
 
-/* ===== NAV ===== */
+/* ===== NAV CONTAINER ===== */
 .nav {
+  background: #111827;   /* dark bar like your old topbar */
+  color: white;
+  padding: 16px 20px;
+}
+
+/* ===== HAMBURGER NAV ===== */
+
+/* top row (logo + button) */
+.nav-top {
   display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
+  justify-content: space-between;
   align-items: center;
 }
 
-.nav a,
-.dropdown > a {
-  text-decoration: none;
+/* brand */
+.brand {
+  font-size: 20px;
   font-weight: bold;
 }
 
-/* LIGHT / DARK NAV */
-.nav-light a,
-.nav-light .dropdown > a {
-  color: #111;
-}
-
-.nav-dark a,
-.nav-dark .dropdown > a {
+/* hamburger button */
+.menu-toggle {
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
   color: white;
 }
 
-/* ===== DROPDOWN ===== */
-.dropdown {
-  position: relative;
+/* nav links (desktop) */
+.nav-links {
+  display: flex;
+  gap: 18px;
+  margin-top: 10px;
 }
 
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;               /* always white box */
-  min-width: 160px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-  border-radius: 8px;
-  overflow: hidden;
-  z-index: 99;
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 10px 14px;
-  color: #111;
-}
-
-.dropdown-menu a:hover {
-  background: #f4f5f7;
-  color: #f28c28;
-}
-
-/* SHOW DROPDOWN */
-.dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu {
-  display: block;
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
 }
 
 /* ===== MOBILE ===== */
 @media (max-width: 600px) {
-
-  .nav {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .nav > a,
-  .nav > .dropdown {
-    width: 100%;
-    text-align: center;
-  }
-
-  .dropdown > a {
+  .menu-toggle {
     display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: white;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .nav-links a {
+    color: #111;
     padding: 10px;
     border-radius: 6px;
   }
 
-  /* FIX OVERLAP: dropdown becomes block */
-  .dropdown-menu {
-    position: static;        /* KEY FIX */
-    margin-top: 6px;
-    box-shadow: none;
+  .nav-links a:hover {
+    background: #f4f5f7;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 }
