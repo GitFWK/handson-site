@@ -239,28 +239,28 @@ body {
   display: block;
 }
 
-/* NAV LAYOUT FIX */
-.nav {
-  display: flex;
-  flex-wrap: wrap;          /* allow wrapping */
-  align-items: center;
-  gap: 12px;
-}
-
-/* MOBILE OPTIMIZATION */
+/* MOBILE NAV FIX */
 @media (max-width: 600px) {
   .nav {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 10px;
   }
 
   .nav a,
   .dropdown {
-    flex: 1 1 45%;          /* 2 items per row */
+    width: 45%;          /* force 2 per row */
     text-align: center;
+  }
+
+  .dropdown > a {
+    display: block;
+    padding: 10px 0;
   }
 
   .dropdown-menu {
     left: 50%;
-    transform: translateX(-50%);  /* center dropdown */
+    transform: translateX(-50%);
   }
 }
