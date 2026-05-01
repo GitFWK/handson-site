@@ -178,6 +178,13 @@ body {
 .dropdown {
   position: relative;
   display: inline-block;
+  margin-right: 18px;   /* match your nav spacing */
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
 /* Dropdown menu */
@@ -200,8 +207,13 @@ body {
   text-decoration: none;
 }
 
-.dropdown-menu a:hover {
-  background: #f4f5f7;
+.dropdown > a {
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown > a:hover {
+  color: #f28c28;
 }
 
 /* Show on hover */
