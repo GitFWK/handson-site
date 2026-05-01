@@ -220,7 +220,7 @@ body {
 .dropdown-menu a {
   display: block;
   padding: 10px 14px;
-  color: #111 !important;
+  color: white !important;
 }
 
 .dropdown:hover .dropdown-menu {
