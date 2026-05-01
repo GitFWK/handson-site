@@ -187,11 +187,6 @@ body {
   gap: 18px;
 }
 
-.nav a,
-.dropdown > a {
-  color: #111;
-}
-
 /* Dropdown menu */
 .dropdown-menu {
   display: none;
