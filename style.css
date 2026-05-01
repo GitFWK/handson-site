@@ -83,8 +83,9 @@ body {
 }
 
 .card a,
-.card a:visited {
-  color: #111827;
+.card a:visited,
+.card a:link {
+  color: #111827 !important;
   font-weight: bold;
   text-decoration: none;
 }
