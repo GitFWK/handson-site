@@ -82,13 +82,6 @@ body {
   color: #444;
 }
 
-.card a,
-.card a:visited,
-.card a:link {
-  color: #111827 !important;
-  font-weight: bold;
-  text-decoration: none;
-}
 
 /* ===== HIGHLIGHT ===== */
 .highlight {
