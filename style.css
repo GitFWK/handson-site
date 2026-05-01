@@ -83,10 +83,15 @@ body {
 }
 
 .card a,
+.card a:link,
 .card a:visited {
-  color: #111827;
+  color: #111827 !important;
   font-weight: bold;
   text-decoration: none;
+}
+
+.card a:hover {
+  color: #f28c28 !important;
 }
 
 
