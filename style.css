@@ -173,9 +173,10 @@ body {
   text-decoration: none;
 }
 
-/* active/current page */
-.nav a.active {
-  color: #f28c28;   /* orange highlight */
+.nav a.active,
+.nav a.active:link,
+.nav a.active:visited {
+  color: #f28c28 !important;
 }
 
 .nav a:hover {
