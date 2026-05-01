@@ -223,13 +223,13 @@ body {
 
 /* ===== MOBILE ===== */
 @media (max-width: 600px) {
-  .nav-links a,
-  .nav-links a:link,
-  .nav-links a:visited {
+  .nav .nav-links a,
+  .nav .nav-links a:link,
+  .nav .nav-links a:visited {
     color: #111 !important;
   }
 
-  .nav-links a.active {
+  .nav .nav-links a.active {
     color: #f28c28 !important;
   }
 }
