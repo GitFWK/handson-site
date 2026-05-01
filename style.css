@@ -187,6 +187,11 @@ body {
   gap: 18px;
 }
 
+.nav a,
+.dropdown > a {
+  color: #111;
+}
+
 /* Dropdown menu */
 .dropdown-menu {
   display: none;
@@ -220,3 +225,5 @@ body {
 .dropdown:hover .dropdown-menu {
   display: block;
 }
+
+
