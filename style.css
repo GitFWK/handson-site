@@ -174,89 +174,80 @@ body {
   font-weight: bold;
 }
 
-/* Dropdown container */
-.dropdown {
-  position: relative;
-  display: inline-block;
-  margin-right: 18px;   /* match your nav spacing */
-}
-
+/* ===== NAV ===== */
 .nav {
   display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
   align-items: center;
-  gap: 18px;
 }
 
-/* Dropdown menu */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  background: white;
-  min-width: 160px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-  border-radius: 8px;
-  overflow: hidden;
-  z-index: 10;
-}
-
-/* Dropdown links */
-.dropdown-menu a {
-  display: block;
-  padding: 10px 14px;
-  color: #111;
-  text-decoration: none;
-}
-
+.nav a,
 .dropdown > a {
-  color: white;
   text-decoration: none;
+  font-weight: bold;
 }
 
-.dropdown > a:hover {
-  color: #f28c28;
-}
-
-/* DARK NAV (homepage) */
-.nav-dark a,
-.nav-dark .dropdown > a {
-  color: white;
-}
-
-/* LIGHT NAV (product pages) */
+/* Light / dark nav colours */
 .nav-light a,
 .nav-light .dropdown > a {
   color: #111;
 }
 
-/* Hover effect (both) */
-.nav a:hover,
-.dropdown > a:hover {
-  color: #f28c28;
+.nav-dark a,
+.nav-dark .dropdown > a {
+  color: white;
 }
 
-/* Show on hover */
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 160px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 99;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 14px;
+  color: #111 !important;
+}
+
 .dropdown:hover .dropdown-menu {
   display: block;
 }
 
-/* MOBILE NAV FIX */
+/* ===== MOBILE NAV ===== */
 @media (max-width: 600px) {
   .nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
 
-  .nav a,
-  .dropdown {
-    width: 45%;          /* force 2 per row */
+  .nav > a,
+  .nav > .dropdown {
+    width: 100%;
     text-align: center;
   }
 
+  .nav > a,
   .dropdown > a {
     display: block;
-    padding: 10px 0;
+    padding: 10px 8px;
+    border-radius: 6px;
+    background: white;
+    color: #111 !important;
   }
 
   .dropdown-menu {
