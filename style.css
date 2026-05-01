@@ -231,17 +231,15 @@ body {
 @media (max-width: 600px) {
   .nav {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
 
   .nav > a,
   .nav > .dropdown {
     width: 100%;
-    text-align: center;
   }
 
-  .nav > a,
   .dropdown > a {
     display: block;
     padding: 10px 8px;
