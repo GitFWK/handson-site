@@ -166,6 +166,17 @@ body {
   padding: 16px 20px;
 }
 
+.nav a,
+.nav a:link,
+.nav a:visited {
+  color: white !important;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: #f28c28 !important;
+}
+
 /* ===== HAMBURGER NAV ===== */
 
 /* top row (logo + button) */
