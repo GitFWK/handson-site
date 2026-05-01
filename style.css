@@ -216,6 +216,24 @@ body {
   color: #f28c28;
 }
 
+/* DARK NAV (homepage) */
+.nav-dark a,
+.nav-dark .dropdown > a {
+  color: white;
+}
+
+/* LIGHT NAV (product pages) */
+.nav-light a,
+.nav-light .dropdown > a {
+  color: #111;
+}
+
+/* Hover effect (both) */
+.nav a:hover,
+.dropdown > a:hover {
+  color: #f28c28;
+}
+
 /* Show on hover */
 .dropdown:hover .dropdown-menu {
   display: block;
