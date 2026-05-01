@@ -239,4 +239,28 @@ body {
   display: block;
 }
 
+/* NAV LAYOUT FIX */
+.nav {
+  display: flex;
+  flex-wrap: wrap;          /* allow wrapping */
+  align-items: center;
+  gap: 12px;
+}
 
+/* MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+  .nav {
+    justify-content: center;
+  }
+
+  .nav a,
+  .dropdown {
+    flex: 1 1 45%;          /* 2 items per row */
+    text-align: center;
+  }
+
+  .dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%);  /* center dropdown */
+  }
+}
