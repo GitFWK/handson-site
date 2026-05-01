@@ -49,6 +49,9 @@ body {
   padding: 40px 20px;
 }
 
+.container:first-of-type {
+  margin-top: 20px;
+
 /* ===== SECTION TITLE ===== */
 .section-title {
   text-align: center;
@@ -168,6 +171,11 @@ body {
   background: #111827;
   color: white;
   padding: 16px 20px;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .nav-top {
