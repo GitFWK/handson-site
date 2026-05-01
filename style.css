@@ -1,20 +1,49 @@
-.social-links {
+.contact-section {
+  text-align: center;
+  padding: 70px 20px;
+  background: #111;
+  color: #fff;
+}
+
+.contact-section h2 {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.contact-section p {
+  max-width: 620px;
+  margin: 0 auto 28px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.contact-actions {
   display: flex;
   justify-content: center;
-  gap: 20px;          /* reduce spacing (was 40px) */
-  padding: 40px 20px;
-  max-width: 400px;   /* limit width so it doesn’t stretch */
-  margin: 0 auto;     /* center the whole block */
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
-.social-links img {
-  width: 28px;        /* slightly smaller (optional) */
-  height: 28px;
-  opacity: 0.5;
-  transition: all 0.25s ease;
+.contact-btn {
+  display: inline-block;
+  padding: 14px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
 }
 
-.social-links img:hover {
-  opacity: 1;
-  transform: translateY(-2px);
+.whatsapp-btn {
+  background: #25D366;
+  color: #fff;
+}
+
+.email-btn {
+  background: #f28c28;
+  color: #111;
+}
+
+.contact-small {
+  margin-top: 30px !important;
+  font-size: 14px;
+  color: #888 !important;
 }
