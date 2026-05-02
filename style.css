@@ -315,6 +315,7 @@ body {
   padding: 6px 12px;
   border-radius: 50%;
   cursor: pointer;
+  transition: opacity 0.3s ease;  /* ADD THIS */
 }
 
 .scroll-btn.left {
