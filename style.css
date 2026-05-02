@@ -271,7 +271,7 @@ body {
 }
 
 .product-card {
-  min-width: 320px;
+  min-width: 260px;
   flex: 0 0 auto;
   background: #1f2937;
   border-radius: 12px;
