@@ -82,7 +82,7 @@
   <button id="rightBtn" class="scroll-btn right" onclick="scrollProducts(1)">›</button>
 </div>
 
-  
+<!-- ===== STILL ===== -->  
 <section class="story-still">
   <div class="story-image">
     <img src="images/handson-story.jpg" alt="HandsON gloves in real factory work">
@@ -101,6 +101,40 @@
     </a>
   </div>
 </section>
+
+<!-- ===== APPLICATION SCROLL ===== -->
+<div class="product-scroll-wrapper application-scroll-wrapper">
+  <div class="product-scroll" id="applicationScroll">
+
+    <div class="product-card">
+      <img src="images/application-manufacturing.jpg" alt="Manufacturing">
+      <h3>Manufacturing</h3>
+      <p>Gloves for daily factory and production work</p>
+    </div>
+
+    <div class="product-card">
+      <img src="images/application-oil-grip.jpg" alt="Oily Handling">
+      <h3>Oily Handling</h3>
+      <p>Better grip for slippery parts and materials</p>
+    </div>
+
+    <div class="product-card">
+      <img src="images/application-cut.jpg" alt="Cut Risk">
+      <h3>Cut Risk</h3>
+      <p>Protection for sharp edges, metal and glass handling</p>
+    </div>
+
+    <div class="product-card">
+      <img src="images/application-esd.jpg" alt="ESD Work">
+      <h3>ESD Work</h3>
+      <p>For electronics and static-sensitive environments</p>
+    </div>
+
+  </div>
+
+  <button class="scroll-btn left" onclick="scrollApplications(-1)">‹</button>
+  <button class="scroll-btn right" onclick="scrollApplications(1)">›</button>
+</div>
   
 <div class="container">
   <div class="highlight">
@@ -195,6 +229,19 @@ function updateArrows() {
 
 productScroll.addEventListener("scroll", updateArrows);
 window.addEventListener("load", updateArrows);
+
+  
+const applicationScroll = document.getElementById("applicationScroll");
+
+function scrollApplications(direction) {
+  const card = applicationScroll.querySelector(".product-card");
+  const gap = 16;
+
+  applicationScroll.scrollBy({
+    left: direction * (card.offsetWidth + gap),
+    behavior: "smooth"
+  });
+}
 </script>
 
 </body>
