@@ -173,12 +173,30 @@ function scrollProducts(direction) {
 }
 
 // Check arrow visibility
+<script>
+const container = document.getElementById("productScroll");
+const leftBtn = document.getElementById("leftBtn");
+const rightBtn = document.getElementById("rightBtn");
+
+function scrollProducts(direction) {
+  const card = container.querySelector(".product-card");
+  const gap = 16;
+
+  container.scrollBy({
+    left: direction * (card.offsetWidth + gap),
+    behavior: "smooth"
+  });
+}
+
 function updateArrows() {
   const scrollLeft = container.scrollLeft;
   const maxScroll = container.scrollWidth - container.clientWidth;
 
-  // Hide left if at start
-  if (scrollLeft <= 5) {
+  // tolerance to fix desktop rounding issues
+  const tolerance = 10;
+
+  // LEFT arrow
+  if (scrollLeft <= tolerance) {
     leftBtn.style.opacity = "0";
     leftBtn.style.pointerEvents = "none";
   } else {
@@ -186,8 +204,8 @@ function updateArrows() {
     leftBtn.style.pointerEvents = "auto";
   }
 
-  // Hide right if at end
-  if (scrollLeft >= maxScroll - 5) {
+  // RIGHT arrow
+  if (scrollLeft >= maxScroll - tolerance) {
     rightBtn.style.opacity = "0";
     rightBtn.style.pointerEvents = "none";
   } else {
@@ -195,6 +213,12 @@ function updateArrows() {
     rightBtn.style.pointerEvents = "auto";
   }
 }
+
+// EVENTS
+container.addEventListener("scroll", updateArrows);
+window.addEventListener("load", updateArrows);
+window.addEventListener("resize", updateArrows); // 🔥 IMPORTANT for desktop
+</script>
 
 // Run on scroll
 container.addEventListener("scroll", updateArrows);
