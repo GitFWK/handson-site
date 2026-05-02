@@ -363,6 +363,7 @@ body {
   right: 10px;
 }
 
+
 .story-still {
   background: #f3efe2;
 }
@@ -406,4 +407,53 @@ body {
   border-radius: 999px;
   text-decoration: none;
   font-weight: bold;
+}
+
+.story-scroll-wrapper {
+  position: relative;
+  padding: 20px;
+  background: #111827;
+}
+
+.story-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.story-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.story-card {
+  min-width: 220px;
+  flex: 0 0 auto;
+  background: #1f2937;
+  border-radius: 12px;
+  padding: 16px;
+  color: white;
+  scroll-snap-align: start;
+}
+
+.story-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.story-card h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.story-card p {
+  font-size: 14px;
+  color: #d1d5db;
 }
