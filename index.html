@@ -270,7 +270,7 @@ window.addEventListener("load", updateArrows);
 const applicationScroll = document.getElementById("applicationScroll");
 
 function scrollApplications(direction) {
-  const card = applicationScroll.querySelector(".");
+  const card = applicationScroll.querySelector(".product-card");
   const gap = 16;
 
   applicationScroll.scrollBy({
@@ -282,7 +282,7 @@ function scrollApplications(direction) {
 const storiesScroll = document.getElementById("storiesScroll");
 
 function scrollStories(direction) {
-  const card = storiesScroll.querySelector(".product-card");
+  const card = storiesScroll.querySelector(".story-card");
   const gap = 16;
 
   storiesScroll.scrollBy({
