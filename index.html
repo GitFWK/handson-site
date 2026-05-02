@@ -9,7 +9,7 @@
   <meta name="description" content="HandsON supplies industrial work gloves in Malaysia. Cut-resistant gloves, grip gloves and anti-static gloves for factories. Reliable local manufacturer.">
   <link rel="canonical" href="https://xprhandson.com/">
 
-  <link rel="stylesheet" href="style.css"?v=3>
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 
 <body>
@@ -71,6 +71,7 @@
 
   </div>
 
+  <button class="scroll-btn left" onclick="scrollProducts(-1)">‹</button>
   <button class="scroll-btn right" onclick="scrollProducts(1)">›</button>
 </div>
   
@@ -129,6 +130,16 @@
 <script>
 function toggleMenu() {
   document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+
+<script>
+function scrollProducts(direction) {
+  const container = document.getElementById("productScroll");
+  container.scrollBy({
+    left: direction * 250,
+    behavior: "smooth"
+  });
 }
 </script>
 
