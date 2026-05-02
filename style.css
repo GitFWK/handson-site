@@ -264,6 +264,19 @@ body {
     padding-left: 60px;
     padding-right: 60px;
   }
+  
+  .scroll-btn.left {
+    left: calc(50% - 550px);   /* align with content edge */
+  }
+
+  .scroll-btn.right {
+    right: calc(50% - 550px);
+  }
+
+  .scroll-btn {
+    font-size: 34px;
+    padding: 8px 14px;
+  }
 }
 
 .product-scroll-wrapper {
