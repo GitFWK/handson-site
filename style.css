@@ -260,6 +260,8 @@ body {
   position: relative;
   padding: 20px;
   background: #111827;
+  display: flex;
+  justify-content: center;   /* ADD THIS */
 }
 
 .product-scroll {
@@ -268,6 +270,8 @@ body {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   padding-bottom: 10px;
+  max-width: 1100px;         /* ADD THIS */
+  width: 100%;
 }
 
 .product-scroll::-webkit-scrollbar {
