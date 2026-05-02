@@ -155,45 +155,6 @@
 function toggleMenu() {
   document.getElementById("navLinks").classList.toggle("active");
 }
-</script>
-
-<script>
-const container = document.getElementById("productScroll");
-const leftBtn = document.getElementById("leftBtn");
-const rightBtn = document.getElementById("rightBtn");
-
-function scrollProducts(direction) {
-  const card = container.querySelector(".product-card");
-  const gap = 16;
-
-  container.scrollBy({
-    left: direction * (card.offsetWidth + gap),
-    behavior: "smooth"
-  });
-}
-
-// Check arrow visibility
-<script>
-const container = document.getElementById("productScroll");
-const leftBtn = document.getElementById("leftBtn");
-const rightBtn = document.getElementById("rightBtn");
-
-function scrollProducts(direction) {
-  const card = container.querySelector(".product-card");
-  const gap = 16;
-
-  container.scrollBy({
-    left: direction * (card.offsetWidth + gap),
-    behavior: "smooth"
-  });
-}
-
-<!-- ===== JS ===== -->
-
-<script>
-function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("active");
-}
 
 const productScroll = document.getElementById("productScroll");
 const leftBtn = document.getElementById("leftBtn");
@@ -207,6 +168,8 @@ function scrollProducts(direction) {
     left: direction * (card.offsetWidth + gap),
     behavior: "smooth"
   });
+
+  setTimeout(updateArrows, 350);
 }
 
 function updateArrows() {
@@ -231,14 +194,6 @@ function updateArrows() {
 }
 
 productScroll.addEventListener("scroll", updateArrows);
-window.addEventListener("load", updateArrows);
-</script>
-
-
-// Run on scroll
-container.addEventListener("scroll", updateArrows);
-
-// Run on load
 window.addEventListener("load", updateArrows);
 </script>
 
