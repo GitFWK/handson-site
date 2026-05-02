@@ -135,6 +135,42 @@
   <button class="scroll-btn left" onclick="scrollApplications(-1)">‹</button>
   <button class="scroll-btn right" onclick="scrollApplications(1)">›</button>
 </div>
+
+<!-- ===== LATEST STORIES ===== -->
+<h2 class="section-title">Latest Stories</h2>
+
+<div class="product-scroll-wrapper">
+  <div class="product-scroll" id="storiesScroll">
+
+    <div class="product-card">
+      <img src="images/story-grip-test.jpg" alt="Grip Test">
+      <h3>Grip Test</h3>
+      <p>How different gloves perform in real grip conditions</p>
+    </div>
+
+    <div class="product-card">
+      <img src="images/story-durability.jpg" alt="Durability">
+      <h3>Durability</h3>
+      <p>How long do gloves actually last in factory use?</p>
+    </div>
+
+    <div class="product-card">
+      <img src="images/story-cut-risk.jpg" alt="Cut Risk">
+      <h3>Cut Risk</h3>
+      <p>Understanding protection levels in real work</p>
+    </div>
+
+    <div class="product-card">
+      <img src="images/story-esd.jpg" alt="ESD Work">
+      <h3>ESD Work</h3>
+      <p>Why static control matters in electronics production</p>
+    </div>
+
+  </div>
+
+  <button class="scroll-btn left" onclick="scrollStories(-1)">‹</button>
+  <button class="scroll-btn right" onclick="scrollStories(1)">›</button>
+</div>
   
 <div class="container">
   <div class="highlight">
@@ -238,6 +274,18 @@ function scrollApplications(direction) {
   const gap = 16;
 
   applicationScroll.scrollBy({
+    left: direction * (card.offsetWidth + gap),
+    behavior: "smooth"
+  });
+}
+
+const storiesScroll = document.getElementById("storiesScroll");
+
+function scrollStories(direction) {
+  const card = storiesScroll.querySelector(".product-card");
+  const gap = 16;
+
+  storiesScroll.scrollBy({
     left: direction * (card.offsetWidth + gap),
     behavior: "smooth"
   });
