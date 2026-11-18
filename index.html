@@ -2,6 +2,7 @@
 
 <html lang="en">
 
+<head>
 <style>
 .hero-slider {
   position: relative;
@@ -117,8 +118,8 @@
   }
 }
 </style>
-<head>
-  <meta charset="UTF-8">
+  
+    <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Industrial Safety Gloves Malaysia | HandsON</title>
@@ -153,64 +154,7 @@
 </head>
 
 
-<script>
-(function () {
-  const slider = document.querySelector(".hero-slider");
-  if (!slider) return;
 
-  const slides = [...slider.querySelectorAll(".hero-slide")];
-  const dots = [...slider.querySelectorAll(".slider-dot")];
-  const prev = slider.querySelector(".slider-prev");
-  const next = slider.querySelector(".slider-next");
-
-  let current = 0;
-  let timer;
-
-  function showSlide(index) {
-    current = (index + slides.length) % slides.length;
-
-    slides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === current);
-      slide.setAttribute("aria-hidden", i !== current);
-    });
-
-    dots.forEach((dot, i) => {
-      dot.classList.toggle("active", i === current);
-      dot.setAttribute("aria-pressed", i === current);
-    });
-  }
-
-  function startTimer() {
-    clearInterval(timer);
-    timer = setInterval(() => {
-      if (!document.hidden) showSlide(current + 1);
-    }, 5000);
-  }
-
-  prev.addEventListener("click", () => {
-    showSlide(current - 1);
-    startTimer();
-  });
-
-  next.addEventListener("click", () => {
-    showSlide(current + 1);
-    startTimer();
-  });
-
-  dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-      showSlide(i);
-      startTimer();
-    });
-  });
-
-  showSlide(0);
-
-  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    startTimer();
-  }
-})();
-</script>
 <body>
 
 <!-- ===== NAV (HAMBURGER) ===== -->
@@ -573,6 +517,63 @@ function scrollStories(direction) {
 
 
 </script>
+<script>
+(function () {
+  const slider = document.querySelector(".hero-slider");
+  if (!slider) return;
 
+  const slides = [...slider.querySelectorAll(".hero-slide")];
+  const dots = [...slider.querySelectorAll(".slider-dot")];
+  const prev = slider.querySelector(".slider-prev");
+  const next = slider.querySelector(".slider-next");
+
+  let current = 0;
+  let timer;
+
+  function showSlide(index) {
+    current = (index + slides.length) % slides.length;
+
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === current);
+      slide.setAttribute("aria-hidden", i !== current);
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === current);
+      dot.setAttribute("aria-pressed", i === current);
+    });
+  }
+
+  function startTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => {
+      if (!document.hidden) showSlide(current + 1);
+    }, 5000);
+  }
+
+  prev.addEventListener("click", () => {
+    showSlide(current - 1);
+    startTimer();
+  });
+
+  next.addEventListener("click", () => {
+    showSlide(current + 1);
+    startTimer();
+  });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      showSlide(i);
+      startTimer();
+    });
+  });
+
+  showSlide(0);
+
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    startTimer();
+  }
+})();
+</script>
 </body>
 </html>
