@@ -1,6 +1,122 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
+<style>
+.hero-slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1920 / 720;
+  overflow: hidden;
+  background: #142238;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  border: 0;
+  background: rgba(0,0,0,0.35);
+  color: white;
+  font-size: 26px;
+  padding: 12px 15px;
+  cursor: pointer;
+}
+
+.slider-prev { left: 12px; }
+.slider-next { right: 12px; }
+
+.slider-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 10px;
+}
+
+.slider-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+}
+
+.slider-dot.active {
+  background: white;
+}
+
+.slider-whatsapp {
+  position: absolute;
+  bottom: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  padding: 12px 22px;
+  background: #16854a;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .hero-slider {
+    aspect-ratio: 16 / 9;
+  }
+
+  .hero-slide img {
+    object-fit: contain;
+  }
+
+  .slider-arrow {
+    font-size: 18px;
+    padding: 8px;
+  }
+
+  .slider-whatsapp {
+    bottom: 34px;
+    font-size: 11px;
+    padding: 8px 12px;
+  }
+
+  .slider-dots {
+    bottom: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide {
+    transition: none;
+  }
+}
+</style>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,6 +152,65 @@
 </script>
 </head>
 
+
+<script>
+(function () {
+  const slider = document.querySelector(".hero-slider");
+  if (!slider) return;
+
+  const slides = [...slider.querySelectorAll(".hero-slide")];
+  const dots = [...slider.querySelectorAll(".slider-dot")];
+  const prev = slider.querySelector(".slider-prev");
+  const next = slider.querySelector(".slider-next");
+
+  let current = 0;
+  let timer;
+
+  function showSlide(index) {
+    current = (index + slides.length) % slides.length;
+
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === current);
+      slide.setAttribute("aria-hidden", i !== current);
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === current);
+      dot.setAttribute("aria-pressed", i === current);
+    });
+  }
+
+  function startTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => {
+      if (!document.hidden) showSlide(current + 1);
+    }, 5000);
+  }
+
+  prev.addEventListener("click", () => {
+    showSlide(current - 1);
+    startTimer();
+  });
+
+  next.addEventListener("click", () => {
+    showSlide(current + 1);
+    startTimer();
+  });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      showSlide(i);
+      startTimer();
+    });
+  });
+
+  showSlide(0);
+
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    startTimer();
+  }
+})();
+</script>
 <body>
 
 <!-- ===== NAV (HAMBURGER) ===== -->
@@ -64,14 +239,38 @@
 
 <!-- ===== HERO ===== -->
 
-<section class="hero">
-  <h1>Industrial Work Gloves Supplier in Malaysia</h1>
-  <p>Performance hand protection for factories, manufacturing and local industry.</p>
-  <p><b>Made in Malaysia • Export Quality Since 2010 • Fast Local Supply</b></p>
 
-  <a class="button" href="https://wa.me/60172555032?text=Hi%20I%20am%20interested%20in%20HandsON%20industrial%20gloves" target="_blank">
+<section class="hero-slider" aria-label="HandsON promotional banners">
+
+  <div class="hero-slide active">
+    <img src="images/banner1.png" alt="HandsON industrial safety gloves" fetchpriority="high">
+  </div>
+
+  <div class="hero-slide">
+    <img src="images/banner2.png" alt="HandsON safety glove range" loading="lazy">
+  </div>
+
+  <div class="hero-slide">
+    <img src="images/banner3.png" alt="HandsON industrial hand protection" loading="lazy">
+  </div>
+
+  <button class="slider-arrow slider-prev"
+          type="button" aria-label="Previous banner">&#10094;</button>
+  <button class="slider-arrow slider-next"
+          type="button" aria-label="Next banner">&#10095;</button>
+
+  <div class="slider-dots">
+    <button class="slider-dot active" type="button" aria-label="Show banner 1"></button>
+    <button class="slider-dot" type="button" aria-label="Show banner 2"></button>
+    <button class="slider-dot" type="button" aria-label="Show banner 3"></button>
+  </div>
+
+  <a class="slider-whatsapp"
+     href="https://wa.me/60172555032?text=Hi%20I%20am%20interested%20in%20HandsON%20industrial%20gloves"
+     target="_blank" rel="noopener noreferrer">
     Contact Us on WhatsApp
   </a>
+
 </section>
 
 <!-- ===== SCROLLABLE PRODUCT PAGE ===== -->
